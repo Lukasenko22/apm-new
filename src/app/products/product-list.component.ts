@@ -55,4 +55,8 @@ export class ProductListComponent implements OnInit {
     value = value.toLowerCase();
     return this.products.filter((product: IProduct) => product.productName.toLowerCase().includes(value));
   }
+
+  onRatingClicked(message: string): void {
+    this.pageTitle = 'Product list: ' + message;
+  }
 }
