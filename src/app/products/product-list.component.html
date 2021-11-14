@@ -18,7 +18,7 @@
       <table class="table" *ngIf="products.length">
         <thead>
         <tr>
-          <th><button class="btn btn-primary" (click)="toggleImage()">{{showImage ? 'Hide' : 'Show'}} Image</button></th>
+          <th><button class="btn btn-primary" (click)="toggleImage()">{{showImage ? 'Hide' : 'Show'}}&nbsp;Image</button></th>
           <th>Product</th>
           <th>Code</th>
           <th>Available</th>
@@ -28,9 +28,13 @@
         </thead>
         <tbody>
           <tr *ngFor="let p of filteredProducts">
-            <td><img *ngIf="showImage" [src]="p.imageUrl" [title]="p.productName"
-                     [style.width.px]="imageWidth" [style.margin.px]="imageMargin"/></td>
-            <td>{{p.productName}}</td>
+            <td>
+              <img *ngIf="showImage" [src]="p.imageUrl" [title]="p.productName"
+                     [style.width.px]="imageWidth" [style.margin.px]="imageMargin"/>
+            </td>
+            <td>
+              <a [routerLink]="['/products',p.productId]">{{p.productName}}</a>
+            </td>
             <td>{{p.productCode | lowercase | convertToSpaces: '-'}}</td>
             <td>{{p.releaseDate}}</td>
             <td>{{p.price | currency: 'USD':'symbol':'1.2-2'}}</td>
