@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {IProduct} from "../product";
-import {ProductService} from "../product.service";
+import {IProduct} from "../model/product";
+import {ProductService} from "../services/product.service";
 import {Subscriber, Subscription} from "rxjs";
 import {isNull} from "@angular/compiler/src/output/output_ast";
 import {isEmpty} from "rxjs/operators";
